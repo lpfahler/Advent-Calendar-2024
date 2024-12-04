@@ -31,7 +31,7 @@ redDebounceTime = 0
 # green interrupt function
 def greenHandler(button1):
     global greenFlag, greenDebounceTime
-    if (ticks_diff(ticks_ms(), greenDebounceTime)) > 200:
+    if (ticks_diff(ticks_ms(), greenDebounceTime)) > 300:
         # if button pressed for real, set flag to 1
         # reset debounce time variable to current time in ms
         greenFlag = 1
@@ -40,14 +40,14 @@ def greenHandler(button1):
 # yellow interrupt function
 def yellowHandler(button2):
     global yellowFlag, yellowDebounceTime
-    if (ticks_diff(ticks_ms(), yellowDebounceTime)) > 200:
+    if (ticks_diff(ticks_ms(), yellowDebounceTime)) > 300:
         yellowFlag = 1
         yellowDebounceTime = ticks_ms()
 
 # red interrupt function
 def redHandler(button3):
     global redFlag, redDebounceTime
-    if (ticks_diff(ticks_ms(), redDebounceTime)) > 200:
+    if (ticks_diff(ticks_ms(), redDebounceTime)) > 300:
         redFlag = 1
         redDebounceTime = ticks_ms()
 
